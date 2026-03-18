@@ -1,0 +1,553 @@
+[FIND]
+REPLACE WITH:
+
+You are refactoring a production Joomla 5.1.2 / PHP 8.1.x lottery results-analysis page so it conforms to the attached LottoExpert reference implementation exactly in structure, behavior, UI system, tone, and safety posture, while preserving the target page’s own game-specific logic, ranges, labels, and data requirements. Use the attached file as the structural reference baseline. :contentReference[oaicite:0]{index=0}
+
+MISSION
+Convert the input file into the same page architecture and product pattern used by the reference file, without turning all pages into literal clones. Preserve the target file’s game-specific content, but force it into the same premium LottoExpert results-intelligence framework, visual system, interaction model, hierarchy, and implementation discipline as the reference.
+
+NON-NEGOTIABLE OUTPUT RULES
+1. Output a complete production-ready file only.
+2. Do not output explanations, summaries, bullet notes, placeholders, pseudo-code, or partial snippets.
+3. Do not omit any required PHP, HTML, CSS, or JavaScript.
+4. Keep everything UTF-8 safe.
+5. JavaScript must be ES5 compliant only. No ES6+ syntax.
+6. Maintain Joomla 5.1.2 and PHP 8.1 compatibility.
+7. Follow PSR-12-style PHP formatting where practical inside a single-file Sorcerer/Joomla implementation.
+8. Preserve LottoExpert brand tone: intelligent, calm, analytical, transparent, non-hype.
+9. Preserve accessibility, semantic structure, and strong security practices.
+10. Do not break working routes, calculations, form handling, or page-specific analytical intent.
+11. All code must be production safe. No demo shortcuts.
+12. Do not change protocol, route intent, or destination behavior of existing analysis links unless a route must be updated only to map the target page into the exact corresponding reference-style location pattern.
+13. Escape output correctly with htmlspecialchars(..., ENT_QUOTES, 'UTF-8').
+14. Keep any generated JSON and JS strings safe for UTF-8 output.
+15. Do not introduce jQuery dependency unless the source file already absolutely requires it. Prefer framework-agnostic vanilla ES5.
+16. Do not use inline “template comments to developer” in the final code.
+17. Do not remove target-page-specific business logic. Reorganize it to match the reference architecture.
+
+PRIMARY GOAL
+Extract the true reusable pattern from the attached reference and apply that pattern to the target file:
+- same page composition
+- same visual hierarchy
+- same hero structure
+- same stats strip logic
+- same sectioning model
+- same card system
+- same chart presentation pattern
+- same controls pattern
+- same table and tracking experience
+- same advanced tools zone
+- same method-note tone
+- same design language
+- same interaction patterns
+- same coding discipline
+
+REFERENCE PATTERN TO REPLICATE
+The converted file must follow this exact architectural pattern:
+
+A. BOOTSTRAP / SAFE INITIALIZATION LAYER
+- defined('_JEXEC') or die;
+- Joomla imports via use statements
+- initialize $app, $doc, $input, $db, $user
+- set or preserve gameId
+- canonical URL handling with query stripped
+- add alternate hreflang links
+- set document title using page/state/game context when available
+
+B. USER / SESSION HANDLING LAYER
+- preserve login/session logic if relevant
+- safely handle guest vs logged-in state
+- if user profile fields are used, fetch them via Joomla DB query safely
+- no raw unsafe SQL interpolation
+
+C. HELPER FUNCTION LAYER
+Organize reusable helpers at top as in the reference style:
+- date formatting helpers
+- padded number helpers
+- logo resolution helper
+- count/range initialization helpers
+- “drawings ago” label helper
+- natural labels builder
+- sort/top keys helper
+- repeated-number comparison helper
+- comma-list helper
+- recent draws fetcher
+- previous occurrence lookup helper
+- drawings-since helper
+- JS-escape helper if needed
+
+Only keep helpers that are relevant to the target page, but the final organization should feel like the reference file.
+
+D. INPUT / WINDOW HANDLING LAYER
+- preserve form-based analysis-window logic
+- validate POST with Session::checkToken()
+- clamp numeric windows to safe min/max bounds
+- keep game-specific windows if the target page needs different ones
+- use Joomla input filtering
+
+E. DATA FETCH LAYER
+- fetch latest draw row
+- fetch draw windows used for charts/tables/insights
+- compute counts and recency arrays for main balls and bonus balls / extra balls / special balls based on the target game’s structure
+- preserve actual target game rules:
+  - count of main balls
+  - bonus ball existence
+  - ranges
+  - column names
+  - daily vs non-daily differences
+  - special prize tiers if applicable
+Do not force 5+1 if the target game is different. Instead, map the target game into the same reference presentation model.
+
+F. INSIGHT / SUMMARY LAYER
+Build the same type of narrative intelligence used in the reference:
+- top active numbers summary
+- quiet numbers summary
+- repeated numbers summary if applicable
+- window analyzed summary
+- optional window-shift comparison between short and broad samples
+- current draw history summary with previous seen dates and “draws ago” logic
+- concise overview note
+- hero insight text
+All copy must remain factual and non-predictive.
+
+G. FULL VISUAL SYSTEM
+Replicate the reference design system style:
+- :root custom properties for brand palette
+- premium calm gradients
+- clean Apple/Stripe-like card treatment
+- strong spacing rhythm
+- rounded panels
+- soft borders and shadow hierarchy
+- same class naming system prefix style
+- same responsive behavior philosophy
+- same section/card/stat/table/button/filter/tracked-chip visual grammar
+You may adapt class names only if needed for collisions, but preserve the reference system as closely as possible.
+
+H. PAGE STRUCTURE
+The output file must follow this same section flow:
+
+1. Hero section
+   - game logo or fallback icon
+   - kicker
+   - page title using state/game context
+   - calm analytical hero summary
+   - latest drawn numbers row
+   - primary CTA buttons
+   - secondary advanced links
+   - latest draw summary panel on the right/top side
+
+2. Key takeaways strip
+   - most active
+   - quietest now
+   - repeated recently or closest equivalent
+   - current window analyzed
+
+3. Tab navigation
+   - Overview
+   - Frequency
+   - Recency
+   - Tables
+   - Advanced Tools
+Adjust anchors only if the target page requires a different but equivalent analytical grouping.
+
+4. Overview section
+   - high-level charts/cards
+   - fast orientation content
+   - note explaining interpretation
+
+5. Recency / current draw context section
+   - draw history or previous appearance context
+   - window-shift narrative or equivalent historical comparison
+
+6. Frequency deep dive section
+   - full main-number distribution chart
+   - special-ball distribution chart if applicable
+   - recency distribution chart or equivalent
+
+7. Tables and tracked numbers section
+   - form controls for analysis windows
+   - main numbers table
+   - special ball table if applicable
+   - quick filters for main table where relevant
+   - checkbox tracking UI
+   - tracked chips panels
+   - local-only tracking note
+
+8. Next steps and advanced tools section
+   - same card-driven CTA system
+   - same utility link grid
+   - preserve the target page’s route ecosystem and protocol behavior
+
+9. Method note section
+   - calm interpretation note
+   - no hype
+   - descriptive, not certainty-based
+
+I. LINK / ROUTE PRESERVATION RULES
+This is critical.
+- Preserve all existing analytical intent and page relationships from the target file.
+- If the target file already links to SKAI, AI Predictions, Skip & Hit, MCMC, Heatmaps, Archives, or equivalent tools, keep those destinations logically intact.
+- Re-layout the links exactly in the reference-style CTA groups.
+- Do not randomly rename, reorder, or repoint routes.
+- Do not change GET parameter names unless required to maintain the existing working route pattern already used by that page/system.
+- Preserve protocol scheme expectations and relative/absolute path style already used in the source system.
+- Preserve archive links and game identifiers exactly, unless there is a bug and the correct mapping is obvious from the source file.
+- Do not invent routes.
+
+J. GAME-SPECIFIC ADAPTATION RULES
+You must infer and preserve the target game’s actual schema and behavior:
+- number of main balls
+- number of bonus balls or extra balls
+- value ranges
+- DB columns used
+- table structure
+- page title semantics
+- state/game variables
+- draw date and next draw date behavior
+- jackpot field usage
+- any special naming such as Cash Ball, Mega Ball, Powerball, Fireball, All Star Bonus, etc.
+Then fit that game into the reference page pattern without flattening its actual rules.
+
+K. SECURITY / DATA SAFETY RULES
+- Use Joomla database query builder
+- no unsafe direct SQL concatenation for user input
+- validate all input
+- use form token for POST
+- escape all output for HTML context
+- escape URL parameters properly
+- no trust in raw request values
+- preserve or improve safer query handling compared with the source file
+- avoid XSS vectors in HTML, attributes, JS strings, and JSON output
+- no inline user-controlled HTML
+- no dangerous eval-like behavior
+- keep external library loading minimal and safe
+
+L. JAVASCRIPT RULES
+- ES5 only
+- wrap in IIFE
+- use 'use strict';
+- no let, const, arrow functions, template literals, optional chaining, classes, modules, promises-only APIs unless safely avoided
+- charts may lazy-load Chart.js exactly as in the reference pattern if charts are required
+- preserve tracking UI
+- preserve filters
+- preserve anchor/tab activation
+- ensure graceful no-Chart fallback
+- keep everything robust and lightweight
+
+M. CSS RULES
+- inline page-scoped CSS in the same file, matching the reference approach
+- preserve premium LottoExpert brand look
+- maintain responsive layout
+- maintain contrast and readability
+- preserve the calm analytical style
+- avoid flashy casino aesthetics
+- avoid visual clutter
+- no Tailwind, no Bootstrap dependency injection
+- no CSS that leaks unnecessarily outside page scope if avoidable
+
+N. COPY / BRAND RULES
+Write copy in LottoExpert tone:
+- truthful
+- intelligent
+- analytical
+- non-manipulative
+- descriptive rather than predictive
+- no exaggerated claims
+- no “guaranteed win” language
+- no gimmicky urgency
+- no spammy sales tone
+Every section heading and support copy should feel like the attached reference.
+
+O. CONVERSION PRIORITY ORDER
+When converting the target file, prioritize in this order:
+1. Preserve correctness of target page data and routes
+2. Apply reference architecture and hierarchy
+3. Apply reference UI system
+4. Apply reference interaction patterns
+5. Improve safety and maintainability
+6. Normalize copy to brand tone
+
+P. DO NOT DO THESE THINGS
+- Do not merely skin the old page with superficial CSS
+- Do not strip important calculations
+- Do not remove forms, tables, or filters if the target page relies on them
+- Do not hardcode reference game values into other games
+- Do not replace the target content with the reference page’s literal numbers, ranges, labels, or links
+- Do not convert working server-side behavior into fake static markup
+- Do not add ES6 syntax
+- Do not produce partial code
+- Do not add explanatory text before or after the code
+- Do not change encoding assumptions away from UTF-8
+- Do not break Sorcerer/Joomla compatibility
+- Do not simplify away page-specific analytical protocols
+
+Q. EXPECTED DELIVERABLE
+Return one fully converted complete file that:
+- is ready to paste into production after review
+- mirrors the attached reference implementation in structure and experience
+- preserves the target page’s own analytical purpose and game specs
+- is UTF-8 safe
+- is ES5 compliant
+- is Joomla/PHP compatible
+- follows LottoExpert brand and production standards
+
+Now perform the conversion on the provided target file.
+
+
+
+
+
+
+
+
+
+
+
+[FIND]
+REPLACE WITH:
+
+You are performing a **strict production QA audit** on a Joomla 5.1.2 / PHP 8.1.x LottoExpert lottery analysis page that was just converted to match a reference implementation.
+
+Your job is NOT to rewrite the file blindly. Your job is to:
+
+1. **VERIFY**
+2. **IDENTIFY DEFECTS**
+3. **FIX ONLY WHAT IS WRONG**
+4. **RETURN A FULL CORRECTED FILE**
+
+This is a **zero-trust audit**. Assume mistakes were made.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRIMARY OBJECTIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ensure the converted file **fully complies with ALL requirements** from the conversion prompt and **perfectly matches the reference architecture, behavior, and standards** while preserving the target game’s logic.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OUTPUT RULES (NON-NEGOTIABLE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Output the **FULL corrected file only**
+- No explanations
+- No summaries
+- No comments about what you changed
+- No placeholders
+- No partial snippets
+- Production-ready code only
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHASE 1 — STRUCTURAL VALIDATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Verify the file EXACTLY follows this architecture:
+
+1. Safe bootstrap (defined('_JEXEC'), imports, app/doc/input/db/user)
+2. Canonical + hreflang handling
+3. User/session handling
+4. Helper function layer (organized, reusable)
+5. Input handling + POST token validation
+6. Data fetch layer (latest draw, windows)
+7. Analysis layer (counts, recency, summaries)
+8. Hero section (with correct layout + CTAs)
+9. Key takeaways strip
+10. Tab navigation (working anchors)
+11. Overview section
+12. Recency/current draw section
+13. Frequency section (charts/cards)
+14. Tables + tracked numbers section
+15. Advanced tools section
+16. Method note section
+17. Integrated CSS system
+18. Integrated ES5 JS system
+
+If ANY section is missing, incomplete, or out of order → FIX IT.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHASE 2 — GAME LOGIC VALIDATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ensure:
+- Correct number of main balls
+- Correct number of bonus/special balls
+- Correct ranges
+- Correct DB column mappings
+- Correct table names
+- Correct date handling
+- Correct draw ordering
+- Correct window sizes
+- No hardcoded reference-game values
+
+If any logic was overwritten incorrectly during conversion → RESTORE it.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHASE 3 — ROUTES & LINKS VALIDATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CRITICAL:
+
+- Do NOT allow broken links
+- Do NOT allow altered protocols
+- Do NOT allow incorrect query params
+- Do NOT allow missing tools
+
+Verify:
+- SKAI links
+- AI Predictions
+- Skip & Hit
+- MCMC
+- Heatmaps
+- Archives
+- Any game-specific tools
+
+Ensure:
+- Same destinations as original intent
+- Same parameter structure
+- Same protocol behavior
+
+If wrong → FIX without changing intent.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHASE 4 — SECURITY AUDIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Enforce:
+
+- Session::checkToken() on POST
+- No raw SQL injection risk
+- Joomla query builder used
+- All output escaped:
+  htmlspecialchars(..., ENT_QUOTES, 'UTF-8')
+
+- Safe handling of:
+  $_POST
+  $_GET
+  $input
+
+- No XSS vectors in:
+  HTML
+  attributes
+  JS
+  JSON
+
+- No unsafe inline rendering
+
+If ANY vulnerability exists → FIX it.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHASE 5 — UTF-8 & ENCODING AUDIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Strictly enforce:
+
+- UTF-8 compliant characters only
+- Remove:
+  â€”, â€œ, â€, smart quotes, invalid glyphs
+- No malformed encoding sequences
+- No NULL passed into string functions
+- No broken JSON encoding
+
+Fix ALL encoding issues.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHASE 6 — JAVASCRIPT (ES5 ONLY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Verify:
+- No ES6 syntax:
+  ❌ let, const
+  ❌ arrow functions
+  ❌ template literals
+  ❌ classes
+  ❌ optional chaining
+
+- Must use:
+  ✔ var
+  ✔ function()
+  ✔ IIFE
+  ✔ 'use strict';
+
+- Chart loading safe
+- No runtime errors
+- All event handlers work
+- Tracking + filters functional
+
+If not → FIX.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHASE 7 — CSS / UI SYSTEM VALIDATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ensure:
+
+- Premium LottoExpert design system applied
+- CSS variables (:root) present
+- No broken layout
+- No missing classes
+- Proper spacing, hierarchy, contrast
+- Responsive behavior intact
+- No visual regressions
+
+If inconsistent → FIX.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHASE 8 — UX / FLOW VALIDATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ensure:
+
+- Page is understandable by a beginner
+- Logical flow:
+  Hero → Insights → Deep Dive → Tables → Tools
+
+- No confusing jumps
+- No missing explanations where required
+- No clutter or duplication
+
+Fix flow issues if needed.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHASE 9 — BRAND COMPLIANCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ensure ALL copy is:
+
+- Truth-based
+- Analytical
+- Calm
+- Non-hype
+- Non-predictive
+- No “guarantee” language
+- No manipulation
+
+Fix tone violations.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PHASE 10 — SOURCERER / JOOMLA COMPATIBILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Ensure:
+
+- No NULL passed into Sourcerer tag processing
+- No broken [[]] blocks
+- No malformed PHP blocks
+- No embedded code that breaks parsing
+- No stray output before PHP execution
+
+Fix anything that could trigger:
+RegularLabs\Plugin\System\Sourcerer errors
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FINAL VALIDATION CHECKLIST (MANDATORY)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Before output, confirm internally:
+
+✔ File is COMPLETE  
+✔ No syntax errors  
+✔ No encoding issues  
+✔ No broken routes  
+✔ No ES6  
+✔ UTF-8 clean  
+✔ Joomla-safe  
+✔ PHP 8.1 safe  
+✔ All sections present  
+✔ Game logic correct  
+✔ Security enforced  
+✔ UI consistent  
+✔ Brand compliant  
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FINAL OUTPUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Return ONLY the fully corrected production-ready file.
+
+NO explanations.
+NO notes.
+NO summaries.
